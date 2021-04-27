@@ -1,6 +1,3 @@
-<?php include "templates/header.php"; ?>
-
-
 <?php
 if (isset($_POST['submit'])) {
 	require "config.php";
@@ -37,6 +34,7 @@ if (isset($_POST['submit'])) {
 <?php if (isset($_POST['submit']) && $statement) { ?>
   > <?php echo $_POST['firstname']; ?> successfully added.
 <?php } ?>
+
 
 <h2>Add a user</h2>
 <!-- This is the new users page. It allows users to enter in their information and enter a new user into our database-->
