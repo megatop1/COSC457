@@ -27,6 +27,18 @@ CREATE TABLE `Client` (
   PRIMARY KEY (`ClientID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+INSERT INTO `Client` (`PhoneNumber`, `ClientID`, `FirstName`, `LastName`) VALUES (769605, 0, 'Ophelia', 'O\'Keefe');
+INSERT INTO `Client` (`PhoneNumber`, `ClientID`, `FirstName`, `LastName`) VALUES (0, 1, 'Kylee', 'Morar');
+INSERT INTO `Client` (`PhoneNumber`, `ClientID`, `FirstName`, `LastName`) VALUES (1, 2, 'Rafaela', 'Greenfelder');
+INSERT INTO `Client` (`PhoneNumber`, `ClientID`, `FirstName`, `LastName`) VALUES (219038850, 3, 'Myles', 'Langworth');
+INSERT INTO `Client` (`PhoneNumber`, `ClientID`, `FirstName`, `LastName`) VALUES (0, 4, 'Otha', 'Braun');
+INSERT INTO `Client` (`PhoneNumber`, `ClientID`, `FirstName`, `LastName`) VALUES (1, 5, 'Jaunita', 'Pagac');
+INSERT INTO `Client` (`PhoneNumber`, `ClientID`, `FirstName`, `LastName`) VALUES (0, 6, 'Laurie', 'Klein');
+INSERT INTO `Client` (`PhoneNumber`, `ClientID`, `FirstName`, `LastName`) VALUES (1, 7, 'Daisy', 'Raynor');
+INSERT INTO `Client` (`PhoneNumber`, `ClientID`, `FirstName`, `LastName`) VALUES (96, 8, 'Emmett', 'Davis');
+INSERT INTO `Client` (`PhoneNumber`, `ClientID`, `FirstName`, `LastName`) VALUES (0, 9, 'Henry', 'Doyle');
+
+
 #
 # TABLE STRUCTURE FOR: Employee
 #
@@ -84,6 +96,18 @@ CREATE TABLE `Invoice` (
   `InvoiceDate` int(11) NOT NULL,
   PRIMARY KEY (`InvoiceID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+INSERT INTO `Invoice` (`InvoiceID`, `Amount`, `PaymentType`, `AppointmentID`, `PaymentDate`, `InvoiceDate`) VALUES (0, 48991, 0, 2, 1990, 1984);
+INSERT INTO `Invoice` (`InvoiceID`, `Amount`, `PaymentType`, `AppointmentID`, `PaymentDate`, `InvoiceDate`) VALUES (1, 33, 0, 3, 1985, 1993);
+INSERT INTO `Invoice` (`InvoiceID`, `Amount`, `PaymentType`, `AppointmentID`, `PaymentDate`, `InvoiceDate`) VALUES (2, 22, 0, 8, 1987, 1986);
+INSERT INTO `Invoice` (`InvoiceID`, `Amount`, `PaymentType`, `AppointmentID`, `PaymentDate`, `InvoiceDate`) VALUES (3, 12579, 0, 4, 1975, 2010);
+INSERT INTO `Invoice` (`InvoiceID`, `Amount`, `PaymentType`, `AppointmentID`, `PaymentDate`, `InvoiceDate`) VALUES (4, 7241, 0, 2, 1990, 2001);
+INSERT INTO `Invoice` (`InvoiceID`, `Amount`, `PaymentType`, `AppointmentID`, `PaymentDate`, `InvoiceDate`) VALUES (5, 2876, 0, 8, 1991, 1972);
+INSERT INTO `Invoice` (`InvoiceID`, `Amount`, `PaymentType`, `AppointmentID`, `PaymentDate`, `InvoiceDate`) VALUES (6, 467, 0, 0, 1998, 2006);
+INSERT INTO `Invoice` (`InvoiceID`, `Amount`, `PaymentType`, `AppointmentID`, `PaymentDate`, `InvoiceDate`) VALUES (7, 201, 0, 2, 1970, 1992);
+INSERT INTO `Invoice` (`InvoiceID`, `Amount`, `PaymentType`, `AppointmentID`, `PaymentDate`, `InvoiceDate`) VALUES (8, 32874665, 0, 3, 2003, 1985);
+INSERT INTO `Invoice` (`InvoiceID`, `Amount`, `PaymentType`, `AppointmentID`, `PaymentDate`, `InvoiceDate`) VALUES (9, 293185702, 0, 9, 2006, 1996);
+
 
 #
 # TABLE STRUCTURE FOR: Pays
