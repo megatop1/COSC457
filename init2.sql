@@ -1,96 +1,66 @@
-CREATE TABLE Client
-(
-  PhoneNumber INT NOT NULL,
-  ClientID INT NOT NULL,
-  PRIMARY KEY (ClientID)
-);
+#
+# TABLE STRUCTURE FOR: Client
+#
 
-CREATE TABLE Service
-(
-  ServiceName INT NOT NULL,
-  ServiceID INT NOT NULL,
-  ServiceType INT NOT NULL,
-  ClientID INT NOT NULL,
-  PRIMARY KEY (ServiceID),
-  FOREIGN KEY (ClientID) REFERENCES Client(ClientID)
-);
+DROP TABLE IF EXISTS `Client`;
 
-CREATE TABLE Client_Name
-(
-  Name INT NOT NULL,
-  ClientID INT NOT NULL,
-  PRIMARY KEY (Name, ClientID),
-  FOREIGN KEY (ClientID) REFERENCES Client(ClientID)
-);
+CREATE TABLE `Client` (
+  `PhoneNumber` int(11) NOT NULL,
+  `FirstName` int(11) NOT NULL,
+  `LastName` int(11) NOT NULL,
+  `ClientID` int(11) NOT NULL,
+  PRIMARY KEY (`ClientID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-CREATE TABLE Invoice
-(
-  InvoiceID INT NOT NULL,
-  Amount INT NOT NULL,
-  PaymentType INT NOT NULL,
-  PaymentID INT NOT NULL,
-  ClientID INT NOT NULL,
-  PRIMARY KEY (InvoiceID),
-  FOREIGN KEY (ClientID) REFERENCES Client(ClientID),
-  UNIQUE (Amount),
-  UNIQUE (PaymentID)
-);
 
-CREATE TABLE Employee
-(
-  EmployeeID INT NOT NULL,
-  ClientID INT NOT NULL,
-  PRIMARY KEY (EmployeeID),
-  FOREIGN KEY (ClientID) REFERENCES Client(ClientID)
-);
+#
+# TABLE STRUCTURE FOR: Employee
+#
 
-CREATE TABLE Employee_Position
-(
-  Position INT NOT NULL,
-  EmployeeID INT NOT NULL,
-  PRIMARY KEY (Position, EmployeeID),
-  FOREIGN KEY (EmployeeID) REFERENCES Employee(EmployeeID)
-);
+DROP TABLE IF EXISTS `Employee`;
 
-CREATE TABLE Employee_DaysOff
-(
-  DaysOff INT NOT NULL,
-  EmployeeID INT NOT NULL,
-  PRIMARY KEY (DaysOff, EmployeeID),
-  FOREIGN KEY (EmployeeID) REFERENCES Employee(EmployeeID)
-);
+CREATE TABLE `Employee` (
+  `HairStylist` int(11) NOT NULL,
+  `Manager_` int(11) NOT NULL,
+  `Barber` int(11) NOT NULL,
+  `FirstName` int(11) NOT NULL,
+  `LastName` int(11) NOT NULL,
+  `EmployeeID` int(11) NOT NULL,
+  `ClientID` int(11) NOT NULL,
+  PRIMARY KEY (`EmployeeID`),
+  KEY `ClientID` (`ClientID`),
+  CONSTRAINT `Employee_ibfk_1` FOREIGN KEY (`ClientID`) REFERENCES `Client` (`ClientID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-CREATE TABLE Employee_Name
-(
-  Name INT NOT NULL,
-  EmployeeID INT NOT NULL,
-  PRIMARY KEY (Name, EmployeeID),
-  FOREIGN KEY (EmployeeID) REFERENCES Employee(EmployeeID)
-);
+#
+# TABLE STRUCTURE FOR: Employee_DaysOff
+#
 
-CREATE TABLE Appointment
-(
-  TypeAppointment INT NOT NULL,
-  AppointmentID INT NOT NULL,
-  EmployeeID INT NOT NULL,
-  ServiceID INT NOT NULL,
-  PRIMARY KEY (AppointmentID),
-  FOREIGN KEY (EmployeeID) REFERENCES Employee(EmployeeID),
-  FOREIGN KEY (ServiceID) REFERENCES Service(ServiceID)
-);
+DROP TABLE IF EXISTS `Employee_DaysOff`;
 
-CREATE TABLE Appointment_Date
-(
-  Date INT NOT NULL,
-  AppointmentID INT NOT NULL,
-  PRIMARY KEY (Date, AppointmentID),
-  FOREIGN KEY (AppointmentID) REFERENCES Appointment(AppointmentID)
-);
+CREATE TABLE `Employee_DaysOff` (
+  `DaysOff` int(11) NOT NULL,
+  `EmployeeID` int(11) NOT NULL,
+  PRIMARY KEY (`DaysOff`,`EmployeeID`),
+  KEY `EmployeeID` (`EmployeeID`),
+  CONSTRAINT `Employee_DaysOff_ibfk_1` FOREIGN KEY (`EmployeeID`) REFERENCES `Employee` (`EmployeeID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-CREATE TABLE Appointment_Price
-(
-  Price INT NOT NULL,
-  AppointmentID INT NOT NULL,
-  PRIMARY KEY (Price, AppointmentID),
-  FOREIGN KEY (AppointmentID) REFERENCES Appointment(AppointmentID)
-);
+#
+# TABLE STRUCTURE FOR: Service
+#
+
+DROP TABLE IF EXISTS `Service`;
+
+CREATE TABLE `Service` (
+  `ServiceName` int(11) NOT NULL,
+  `ServiceID` int(11) NOT NULL,
+  `Nails` int(11) NOT NULL,
+  `Hair` int(11) NOT NULL,
+  `wax` int(11) NOT NULL,
+  `ClientID` int(11) NOT NULL,
+  PRIMARY KEY (`ServiceID`),
+  KEY `ClientID` (`ClientID`),
+  CONSTRAINT `Service_ibfk_1` FOREIGN KEY (`ClientID`) REFERENCES `Client` (`ClientID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
