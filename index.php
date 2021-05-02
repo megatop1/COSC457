@@ -14,7 +14,7 @@
   <a class="active" href="create.php">Create</a>
   <a href="read.php">Read</a>
   <a href="update.php">Update</a>
+  <a href="CreateAppointment.php">Create Appointment</a>
 </div>
 
 <?php include "templates/footer.php"; ?>
-

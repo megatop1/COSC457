@@ -1,6 +1,9 @@
+CREATE DATABASE brandon;
+use brandon;
+
 CREATE TABLE Invoice
 (
-  InvoiceID INT NOT NULL,
+  InvoiceID INT NOT NULL AUTO_INCREMENT,
   Amount INT NOT NULL,
   PaymentType VARCHAR(11) NOT NULL,
   TestID INT NOT NULL,
@@ -12,7 +15,7 @@ CREATE TABLE Invoice
 CREATE TABLE Appointment
 (
   Date INT NOT NULL,
-  AppointmentID INT NOT NULL,
+  AppointmentID INT NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (AppointmentID)
 );
 
@@ -20,7 +23,7 @@ CREATE TABLE Employee
 (
   Position VARCHAR(11) NOT NULL,
   DaysOff VARCHAR(11) NOT NULL,
-  EmployeeID INT NOT NULL,
+  EmployeeID INT NOT NULL AUTO_INCREMENT,
   FirstName VARCHAR(20) NOT NULL,
   LastName VARCHAR(20) NOT NULL,
   PRIMARY KEY (EmployeeID)
@@ -29,7 +32,7 @@ CREATE TABLE Employee
 CREATE TABLE Client
 (
   PhoneNumber VARCHAR(20) NOT NULL,
-  ClientID INT NOT NULL,
+  ClientID INT NOT NULL AUTO_INCREMENT,
   FirstName VARCHAR(20) NOT NULL,
   LastName VARCHAR(20) NOT NULL,
   PRIMARY KEY (ClientID)
@@ -38,7 +41,7 @@ CREATE TABLE Client
 CREATE TABLE Service
 (
   ServiceName VARCHAR(11) NOT NULL,
-  ServiceID INT NOT NULL,
+  ServiceID INT NOT NULL AUTO_INCREMENT,
   ServiceType VARCHAR(11) NOT NULL,
   Cost INT NOT NULL,
   PRIMARY KEY (ServiceID)
@@ -88,3 +91,6 @@ CREATE TABLE Includes
   FOREIGN KEY (ServiceID) REFERENCES Service(ServiceID),
   FOREIGN KEY (AppointmentID) REFERENCES Appointment(AppointmentID)
 );
+
+
+
