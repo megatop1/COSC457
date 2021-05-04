@@ -7,21 +7,23 @@ use barber;
 DROP TABLE IF EXISTS `Appointment`;
 
 CREATE TABLE `Appointment` (
-  `Date` int(11) NOT NULL,
+  `Date` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL,
   `AppointmentID` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`AppointmentID`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES (1993, 1);
-INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES (2020, 2);
-INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES (2011, 3);
-INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES (2011, 4);
-INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES (1999, 5);
-INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES (2010, 6);
-INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES (1982, 7);
-INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES (1972, 8);
-INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES (2003, 9);
-INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES (2009, 10);
+
+INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('1974-07-16', 1);
+INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('1992-02-08', 2);
+INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('1988-04-05', 3);
+INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('1999-03-25', 4);
+INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('1997-11-14', 5);
+INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('2002-09-26', 6);
+INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('1983-06-20', 7);
+INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('1997-01-15', 8);
+INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('2006-07-06', 9);
+INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('1972-10-22', 10);
+
 
 #
 # TABLE STRUCTURE FOR: Client
