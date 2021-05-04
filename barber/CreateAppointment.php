@@ -5,19 +5,17 @@ if (isset($_POST['submit'])) {
 	try {
 	  $connection = new PDO($dsn, $username, $password, $options);
   
-	  $new_user = array(
-		"firstname" => $_POST['firstname'],
-		"lastname"  => $_POST['lastname'],
-		"email"     => $_POST['email'],
-		"age"       => $_POST['age'],
-		"location"  => $_POST['location']
+	  $client = array(
+		"FirstName" => $_POST['FirstName'],
+		"LastName"  => $_POST['LastName'],
+		"PhoneNumber"       => $_POST['PhoneNumber']
 	  );
   
 	  $sql = sprintf(
   "INSERT INTO %s (%s) values (%s)",
-  "users",
-  implode(", ", array_keys($new_user)),
-  ":" . implode(", :", array_keys($new_user))
+  "Client",
+  implode(", ", array_keys($client)),
+  ":" . implode(", :", array_keys($client))
 	  );
   
 	  $statement = $connection->prepare($sql);
@@ -36,20 +34,16 @@ if (isset($_POST['submit'])) {
 <?php } ?>
 
 
-<h2>Add a user</h2>
+<h2>Create Appointment</h2>
 <!-- This is the new users page. It allows users to enter in their information and enter a new user into our database-->
     <form method="post">
-    	<label for="firstname">First Name</label><br> <!-- label for "input" aka Each label has attribute name and id -->
-    	<input type="text" name="firstname" id="firstname"><br> <!-- An input/label (entity) <firstname> is associated to a label by its id (attribute)-->
-        <label for="lastname">Last Name</label><br>
-    	<input type="text" name="lastname" id="lastname"><br>
-    	<label for="email">Email Address</label><br>
-    	<input type="text" name="email" id="email"><br>
-    	<label for="age">Age</label><br>
-    	<input type="text" name="age" id="age"><br>
-    	<label for="location">Location</label> <br>
-    	<input type="text" name="location" id="location"><br>
-    	<input type="submit" name="submit" value="Submit">
+    	<label for="FirstName">First Name</label><br> <!-- label for "input" aka Each label has attribute name and id -->
+    	<input type="text" name="firstname" id="FirstName"><br> <!-- An input/label (entity) <firstname> is associated to a label by its id (attribute)-->
+        <label for="LastName">Last Name</label><br>
+    	<input type="text" name="lastname" id="LastName"><br>
+    	<label for="PhoneNumber">Phone Number</label><br>
+		<input type="text" name="PhoneNumber" id="PhoneNumber"><br>
+		<input type="submit" name="submit" value="Submit">
     </form>
 
     <a href="index.php">Back to home</a>
