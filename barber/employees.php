@@ -13,14 +13,23 @@ if (isset($_POST['submit'])) {
 
     $connection = new PDO($dsn, $username, $password, $options);
 
+    /* $sql = "SELECT *
+    FROM Employee
+    WHERE FirstName = :Fname"; */
+
+
     $sql = "SELECT *
     FROM Employee
-    WHERE FirstName = :Fname";
+    WHERE FirstName = :Fname AND LastName = :Lname";
+ 
 
     $Fname = $_POST['Fname'];
+    $Lname = $_POST['Lname'];
 
     $statement = $connection->prepare($sql);
-    $statement->bindParam(':Fname', $Fname, PDO::PARAM_STR);
+    /* $statement->bindParam(':Fname', $Fname, PDO::PARAM_STR); */
+    $statement->bindParam('Fname', $Fname, PDO::PARAM_STR);
+    $statement->bindParam('Lname', $Lname, PDO::PARAM_STR);
     $statement->execute();
 
     $result = $statement->fetchAll();
@@ -66,8 +75,10 @@ if (isset($_POST['submit'])) {
 <h2>Find user based on location</h2>
 
 <form method="post">
-  <label for="Fname">Location</label>
+  <label for="Fname">First Name</label>
   <input type="text" id="Fname" name="Fname">
+  <label for="Lname">Last Name</label>
+  <input type="text" id="Lname" name="Lname"> 
   <input type="submit" name="submit" value="View Results">
 </form>
 
