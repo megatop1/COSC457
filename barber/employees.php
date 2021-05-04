@@ -1,6 +1,11 @@
-<?php include "templates/header.php"; ?>
-
 <?php
+
+/**
+  * Function to query information based on
+  * a parameter: in this case, location.
+  *
+  */
+
 if (isset($_POST['submit'])) {
   try {
     require "config.php";
@@ -12,7 +17,7 @@ if (isset($_POST['submit'])) {
     FROM Employee
     WHERE FirstName = :Fname";
 
-    $Fname= $_POST['Fname'];
+    $Fname = $_POST['Fname'];
 
     $statement = $connection->prepare($sql);
     $statement->bindParam(':Fname', $Fname, PDO::PARAM_STR);
@@ -24,7 +29,6 @@ if (isset($_POST['submit'])) {
   }
 }
 ?>
-
 <?php require "templates/header.php"; ?>
 
 <?php
@@ -35,7 +39,6 @@ if (isset($_POST['submit'])) {
     <table>
       <thead>
 <tr>
-
   <th>Position</th>
   <th>DaysOff</th>
   <th>EmployeeID</th>
@@ -60,15 +63,14 @@ if (isset($_POST['submit'])) {
   <?php }
 } ?>
 
-<h2>Find Employee By First Name</h2>
+<h2>Find user based on location</h2>
 
 <form method="post">
-  <label for="Fname">First Name</label>
+  <label for="Fname">Location</label>
   <input type="text" id="Fname" name="Fname">
   <input type="submit" name="submit" value="View Results">
 </form>
 
 <a href="index.php">Back to home</a>
 
-
-<?php include "templates/footer.php"; ?>
+<?php require "templates/footer.php"; ?>
