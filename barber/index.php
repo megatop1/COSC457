@@ -14,6 +14,9 @@
   <a class="active" href="CreateAppointment.php">Create Appointment</a>
   <a href="read.php">Scheduled Appointments</a>
   <a href="update.php">Update Appointment</a>
+  <a href="services.php">Services</a>
+  <a href="employees.php">Employees</a>
+  <a href="clients.php">Clients</a>
 </div>
 
 
