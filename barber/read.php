@@ -15,9 +15,9 @@ if (isset($_POST['submit'])) {
 
     $sql = "SELECT *
     FROM Client
-    WHERE FirstName = FirstName";
+    WHERE FirstName = :Client";
 
-    $client = $_POST['Client'];
+    $Client = $_POST['Client'];
 
     $statement = $connection->prepare($sql);
     $statement->bindParam(':Client', $Client, PDO::PARAM_STR);
@@ -39,7 +39,7 @@ if (isset($_POST['submit'])) {
     <table>
       <thead>
 <tr>
-  <th>#</th>
+
   <th>Phone Number</th>
   <th>Client ID</th>
   <th>First Name</th>
@@ -58,7 +58,7 @@ if (isset($_POST['submit'])) {
       </tbody>
   </table>
   <?php } else { ?>
-    > No results found for <?php echo escape($_POST['client']); ?>.
+    > No results found for <?php echo escape($_POST['Client']); ?>.
   <?php }
 } ?>
 

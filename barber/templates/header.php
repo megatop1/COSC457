@@ -129,6 +129,17 @@ html {
     display: flex;
     justify-content: center;
   }
+
+  table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 5px;
+  border-bottom: 1px solid #aaa;
+}
 </style>
   </head>
 
