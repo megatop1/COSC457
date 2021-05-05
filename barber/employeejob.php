@@ -13,14 +13,21 @@ if (isset($_POST['submit'])) {
 
     $connection = new PDO($dsn, $username, $password, $options);
 
-    $sql = "SELECT *
-    FROM Client
-    WHERE FirstName = :Client";
+    /* $sql = "SELECT *
+    FROM Employee
+    WHERE FirstName = :Fname"; */
 
-    $Client = $_POST['Client'];
+
+    $sql = "SELECT *
+    FROM Employee
+    WHERE Position = :job";
+ 
+
+    $job = $_POST['job'];
 
     $statement = $connection->prepare($sql);
-    $statement->bindParam(':Client', $Client, PDO::PARAM_STR);
+    /* $statement->bindParam(':Fname', $Fname, PDO::PARAM_STR); */
+    $statement->bindParam('job', $job, PDO::PARAM_STR);
     $statement->execute();
 
     $result = $statement->fetchAll();
@@ -39,18 +46,19 @@ if (isset($_POST['submit'])) {
     <table>
       <thead>
 <tr>
-
-  <th>Phone Number</th>
-  <th>Client ID</th>
-  <th>First Name</th>
-  <th>Last Name</th>
+  <th>Position</th>
+  <th>DaysOff</th>
+  <th>EmployeeID</th>
+  <th>FirstName</th>
+  <th>LastName</th>
 </tr>
       </thead>
       <tbody>
   <?php foreach ($result as $row) { ?>
       <tr>
-<td><?php echo escape($row["PhoneNumber"]); ?></td>
-<td><?php echo escape($row["ClientID"]); ?></td>
+<td><?php echo escape($row["Position"]); ?></td>
+<td><?php echo escape($row["DaysOff"]); ?></td>
+<td><?php echo escape($row["EmployeeID"]); ?></td>
 <td><?php echo escape($row["FirstName"]); ?></td>
 <td><?php echo escape($row["LastName"]); ?></td>
       </tr>
@@ -58,15 +66,14 @@ if (isset($_POST['submit'])) {
       </tbody>
   </table>
   <?php } else { ?>
-    > No results found for <?php echo escape($_POST['Client']); ?>.
+    > No results found for <?php echo escape($_POST['job']); ?>.
   <?php }
 } ?>
 
-<h2>List All Appointments</h2>
-
+<h2>Find Employees By Job Title</h2>
 <form method="post">
-  <label for="Client">Client</label>
-  <input type="text" id="Client" name="Client">
+  <label for="job">Job Title</label>
+  <input type="text" id="job" name="job">
   <input type="submit" name="submit" value="View Results">
 </form>
 

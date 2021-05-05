@@ -18,18 +18,17 @@ if (isset($_POST['submit'])) {
     WHERE FirstName = :Fname"; */
 
 
+
     $sql = "SELECT *
     FROM Employee
-    WHERE FirstName = :Fname AND LastName = :Lname";
+    WHERE DaysOff = :Day";
  
 
-    $Fname = $_POST['Fname'];
-    $Lname = $_POST['Lname'];
+    $Day = $_POST['Day'];
 
     $statement = $connection->prepare($sql);
     /* $statement->bindParam(':Fname', $Fname, PDO::PARAM_STR); */
-    $statement->bindParam('Fname', $Fname, PDO::PARAM_STR);
-    $statement->bindParam('Lname', $Lname, PDO::PARAM_STR);
+    $statement->bindParam('Day', $Day, PDO::PARAM_STR);
     $statement->execute();
 
     $result = $statement->fetchAll();
@@ -68,17 +67,14 @@ if (isset($_POST['submit'])) {
       </tbody>
   </table>
   <?php } else { ?>
-    > No results found for <?php echo escape($_POST['Fname']); ?>.
+    > No results found for <?php echo escape($_POST['Day']); ?>.
   <?php }
 } ?>
 
-<h2>Find user based on location</h2>
-
+<h2>Find Which Employees Are Off On A Specific Day</h2>
 <form method="post">
-  <label for="Fname">First Name</label>
-  <input type="text" id="Fname" name="Fname">
-  <label for="Lname">Last Name</label>
-  <input type="text" id="Lname" name="Lname"> 
+  <label for="Day">Day of Week</label>
+  <input type="text" id="Fname" name="Day">
   <input type="submit" name="submit" value="View Results">
 </form>
 
