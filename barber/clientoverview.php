@@ -13,8 +13,7 @@
 
 <!-- Links -->
 <ul>
-    <li><a href="employeename.php">Find Employee Information by Entering First and Last name</a></li>
-    <li><a href="employeejob.php">Filter employee per job title</a></li>
-    <li><a href="employeedayoff.php">Check which employees are off on a certain day of the week</a></li>
+    <li><a href="clientname.php">Find Client by name</a></li>
+    <li><a href="#">Find Client by phone number</a></li>
 </ul>
 <?php include "templates/footer.php"; ?>
