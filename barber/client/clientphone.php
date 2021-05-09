@@ -8,8 +8,8 @@
 
 if (isset($_POST['submit'])) {
   try {
-    require "config.php";
-    require "common.php";
+    require "../config.php";
+    require "../common.php";
 
     $connection = new PDO($dsn, $username, $password, $options);
 
@@ -20,16 +20,14 @@ if (isset($_POST['submit'])) {
 
     $sql = "SELECT *
     FROM Client
-    WHERE FirstName = :Fname AND LastName = :Lname";
+    WHERE PhoneNumber = :phone";
  
 
-    $Fname = $_POST['Fname'];
-    $Lname = $_POST['Lname'];
+    $phone = $_POST['phone'];
 
     $statement = $connection->prepare($sql);
     /* $statement->bindParam(':Fname', $Fname, PDO::PARAM_STR); */
-    $statement->bindParam('Fname', $Fname, PDO::PARAM_STR);
-    $statement->bindParam('Lname', $Lname, PDO::PARAM_STR);
+    $statement->bindParam('phone', $phone, PDO::PARAM_STR);
     $statement->execute();
 
     $result = $statement->fetchAll();
@@ -38,7 +36,7 @@ if (isset($_POST['submit'])) {
   }
 }
 ?>
-<?php require "templates/header.php"; ?>
+<?php require "../templates/header.php"; ?>
 
 <?php
 if (isset($_POST['submit'])) {
@@ -66,20 +64,18 @@ if (isset($_POST['submit'])) {
       </tbody>
   </table>
   <?php } else { ?>
-    > No results found for <?php echo escape($_POST['Fname']); ?>.
+    > No results found for <?php echo escape($_POST['phone']); ?>.
   <?php }
 } ?>
 
-<h2>Find Employee Data by entering their first name and last name</h2>
+<h2>Find A Client By Entering Their Phone Number</h2>
 
 <form method="post">
-  <label for="Fname">First Name</label>
-  <input type="text" id="Fname" name="Fname">
-  <label for="Lname">Last Name</label>
-  <input type="text" id="Lname" name="Lname"> 
+  <label for="phone">First Name</label>
+  <input type="text" id="phone" name="phone">
   <input type="submit" name="submit" value="View Results">
 </form>
 
-<a href="index.php">Back to home</a>
+<a href="../index.php">Back to home</a>
 
-<?php require "templates/footer.php"; ?>
+<?php require "../templates/footer.php"; ?>

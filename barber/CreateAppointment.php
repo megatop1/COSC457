@@ -35,6 +35,10 @@ if (isset($_POST['submit'])) {
 
 
 <h2>Create Appointment</h2>
+
+</br>
+
+<h3>Name and Phone Number</h3>
 <!-- This is the new users page. It allows users to enter in their information and enter a new user into our database-->
     <form method="post">
     	<label for="FirstName">First Name</label><br> <!-- label for "input" aka Each label has attribute name and id -->
@@ -46,6 +50,8 @@ if (isset($_POST['submit'])) {
 		<input type="submit" name="submit" value="Submit">
     </form>
 
+	<h3>When you are done entering your information, please click the green "Submit" button, then click "Next"</h3>
+	<a href="#">Next</a>
     <a href="index.php">Back to home</a>
 
     <?php include "templates/footer.php"; ?>

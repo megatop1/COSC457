@@ -8,8 +8,8 @@
 
 if (isset($_POST['submit'])) {
   try {
-    require "config.php";
-    require "common.php";
+    require "../config.php";
+    require "../common.php";
 
     $connection = new PDO($dsn, $username, $password, $options);
 
@@ -19,15 +19,16 @@ if (isset($_POST['submit'])) {
 
 
     $sql = "SELECT *
-    FROM Client
-    WHERE PhoneNumber = :phone";
+    FROM Client, Appointment
+    WHERE Client.ClientID = AppointmentID AND FirstName = :Fname";
  
 
-    $phone = $_POST['phone'];
+    $Fname = $_POST['Fname'];
+    $Lname = $_POST['Lname']; 
 
     $statement = $connection->prepare($sql);
     /* $statement->bindParam(':Fname', $Fname, PDO::PARAM_STR); */
-    $statement->bindParam('phone', $phone, PDO::PARAM_STR);
+    $statement->bindParam('Fname', $Fname, PDO::PARAM_STR);
     $statement->execute();
 
     $result = $statement->fetchAll();
@@ -36,7 +37,7 @@ if (isset($_POST['submit'])) {
   }
 }
 ?>
-<?php require "templates/header.php"; ?>
+<?php require "../templates/header.php"; ?>
 
 <?php
 if (isset($_POST['submit'])) {
@@ -50,6 +51,8 @@ if (isset($_POST['submit'])) {
   <th>ClientID</th>
   <th>FirstName</th>
   <th>LastName</th>
+  <th>Date</th>
+  <th>AppointmentID</th>
 </tr>
       </thead>
       <tbody>
@@ -59,23 +62,25 @@ if (isset($_POST['submit'])) {
 <td><?php echo escape($row["ClientID"]); ?></td>
 <td><?php echo escape($row["FirstName"]); ?></td>
 <td><?php echo escape($row["LastName"]); ?></td>
+<td><?php echo escape($row["Date"]); ?></td>
+<td><?php echo escape($row["AppointmentID"]); ?></td>
       </tr>
     <?php } ?>
       </tbody>
   </table>
   <?php } else { ?>
-    > No results found for <?php echo escape($_POST['phone']); ?>.
+    > No results found for <?php echo escape($_POST['Fname']); ?>.
   <?php }
 } ?>
 
-<h2>Find A Client By Entering Their Phone Number</h2>
+<h2>Find Employee Data by entering their first name and last name</h2>
 
 <form method="post">
-  <label for="phone">First Name</label>
-  <input type="text" id="phone" name="phone">
+  <label for="Fname">First Name</label>
+  <input type="text" id="Fname" name="Fname">
   <input type="submit" name="submit" value="View Results">
 </form>
 
-<a href="index.php">Back to home</a>
+<a href="../index.php">Back to home</a>
 
-<?php require "templates/footer.php"; ?>
+<?php require "../templates/footer.php"; ?>

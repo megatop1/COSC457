@@ -8,8 +8,8 @@
 
 if (isset($_POST['submit'])) {
   try {
-    require "config.php";
-    require "common.php";
+    require "../config.php";
+    require "../common.php";
 
     $connection = new PDO($dsn, $username, $password, $options);
 
@@ -20,15 +20,14 @@ if (isset($_POST['submit'])) {
 
 
     $sql = "SELECT *
-    FROM Employee
-    WHERE DaysOff = :Day";
+    FROM Service";
  
 
     $Day = $_POST['Day'];
 
     $statement = $connection->prepare($sql);
     /* $statement->bindParam(':Fname', $Fname, PDO::PARAM_STR); */
-    $statement->bindParam('Day', $Day, PDO::PARAM_STR);
+    /* $statement->bindParam('Day', $Day, PDO::PARAM_STR); */
     $statement->execute();
 
     $result = $statement->fetchAll();
@@ -37,7 +36,7 @@ if (isset($_POST['submit'])) {
   }
 }
 ?>
-<?php require "templates/header.php"; ?>
+<?php require "../templates/header.php"; ?>
 
 <?php
 if (isset($_POST['submit'])) {
@@ -47,21 +46,19 @@ if (isset($_POST['submit'])) {
     <table>
       <thead>
 <tr>
-  <th>Position</th>
-  <th>DaysOff</th>
-  <th>EmployeeID</th>
-  <th>FirstName</th>
-  <th>LastName</th>
+  <th>ServiceName</th>
+  <th>ServiceID</th>
+  <th>ServiceType</th>
+  <th>Cost</th>
 </tr>
       </thead>
       <tbody>
   <?php foreach ($result as $row) { ?>
       <tr>
-<td><?php echo escape($row["Position"]); ?></td>
-<td><?php echo escape($row["DaysOff"]); ?></td>
-<td><?php echo escape($row["EmployeeID"]); ?></td>
-<td><?php echo escape($row["FirstName"]); ?></td>
-<td><?php echo escape($row["LastName"]); ?></td>
+<td><?php echo escape($row["ServiceName"]); ?></td>
+<td><?php echo escape($row["ServiceID"]); ?></td>
+<td><?php echo escape($row["ServiceType"]); ?></td>
+<td><?php echo escape($row["Cost"]); ?></td>
       </tr>
     <?php } ?>
       </tbody>
@@ -71,13 +68,12 @@ if (isset($_POST['submit'])) {
   <?php }
 } ?>
 
-<h2>Find Which Employees Are Off On A Specific Day</h2>
+<h2>List All Services</h2>
+
 <form method="post">
-  <label for="Day">Day of Week</label>
-  <input type="text" id="Fname" name="Day">
   <input type="submit" name="submit" value="View Results">
 </form>
 
-<a href="index.php">Back to home</a>
+<a href="../index.php">Back to home</a>
 
-<?php require "templates/footer.php"; ?>
+<?php require "../templates/footer.php"; ?>
