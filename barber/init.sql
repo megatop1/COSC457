@@ -10,25 +10,26 @@ CREATE TABLE `Appointment` (
   `Date` datetime COLLATE utf8mb4_unicode_ci NOT NULL,
   `AppointmentID` int(11) NOT NULL AUTO_INCREMENT,
   `DesiredEmployee` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `Email` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `AppointmentService` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `AppointmentServiceType` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `PaymentType` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `Comments` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`AppointmentID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
 
-INSERT INTO `Appointment` (`Date`, `AppointmentID`, `DesiredEmployee`, `Email`, `AppointmentService`, `AppointmentServiceType`, `Comments`) VALUES ('2021-05-01 10:30:00', 1, 'Hilda', 'rjtowson@gmail.com', 'Haircut', 'Mullet', 'Light fade on sides');
-INSERT INTO `Appointment` (`Date`, `AppointmentID`, `DesiredEmployee`, `Email`, `AppointmentService`, `AppointmentServiceType`, `Comments`) VALUES ('2021-05-02 11:15:00', 2, 'Hollie', 'brandontowson@gmail.com', 'Haircut', 'Fade', 'Skin fade');
-INSERT INTO `Appointment` (`Date`, `AppointmentID`, `DesiredEmployee`, `Email`, `AppointmentService`, `AppointmentServiceType`, `Comments`) VALUES ('2021-05-03 12:30:00', 3,'Isaac', 'gurmilantowson@gmail.com', 'Haircut', 'Buzzcut', '1 all over');
-INSERT INTO `Appointment` (`Date`, `AppointmentID`, `DesiredEmployee`, `Email`, `AppointmentService`, `AppointmentServiceType`, `Comments`) VALUES ('2021-05-04 14:45:00', 4,'Kira', 'rjtowson@gmail.com', 'Nails', 'Hands', 'Gel on top');
-INSERT INTO `Appointment` (`Date`, `AppointmentID`, `DesiredEmployee`, `Email`, `AppointmentService`, `AppointmentServiceType`, `Comments`) VALUES ('2021-05-05 16:00:00', 5,'Dulce', 'brandontowson@gmail.com', 'Nails', 'Toes', 'No paint');
-INSERT INTO `Appointment` (`Date`, `AppointmentID`, `DesiredEmployee`, `Email`, `AppointmentService`, `AppointmentServiceType`, `Comments`) VALUES ('2021-05-06 17:15:00', 6,'Odell', 'gurmilantowson@gmail.com', 'Nails', 'Hands', 'Hang nail on left big thumb');
-INSERT INTO `Appointment` (`Date`, `AppointmentID`, `DesiredEmployee`, `Email`, `AppointmentService`, `AppointmentServiceType`, `Comments`) VALUES ('2021-05-07 18:00:00', 7,'Magdalena', 'rjtowson@gmail.com', 'Wax', 'Upper Lip', 'Sensitive skin');
-INSERT INTO `Appointment` (`Date`, `AppointmentID`, `DesiredEmployee`, `Email`, `AppointmentService`, `AppointmentServiceType`, `Comments`) VALUES ('2021-05-08 09:15:00', 8,'Vincent', 'brandontowson@gmail.com', 'Wax', 'Eyebrows', 'Clean up eyebrow on sides');
-INSERT INTO `Appointment` (`Date`, `AppointmentID`, `DesiredEmployee`, `Email`, `AppointmentService`, `AppointmentServiceType`, `Comments`) VALUES ('2021-05-09 10:00:00', 9,'Kira', 'gurmilantowson@gmail.com', 'Wax', 'Legs', 'Swimmer');
-INSERT INTO `Appointment` (`Date`, `AppointmentID`, `DesiredEmployee`, `Email`, `AppointmentService`, `AppointmentServiceType`, `Comments`) VALUES ('2021-05-10 13:30:00', 10,'Hollie', 'rjtowson@gmail.com', 'Wax', 'Neck', 'Wants bald');
+INSERT INTO `Appointment` (`Date`, `AppointmentID`, `DesiredEmployee`, `Email`, `AppointmentService`, `AppointmentServiceType`, `PaymentType`, `Comments`) VALUES ('2021-05-01 10:30:00', 1, 'Hilda', 'rjtowson@gmail.com', 'Haircut', 'Mullet', 'Cash', 'Light fade on sides');
+INSERT INTO `Appointment` (`Date`, `AppointmentID`, `DesiredEmployee`, `Email`, `AppointmentService`, `AppointmentServiceType`, `PaymentType`, `Comments`) VALUES ('2021-05-02 11:15:00', 2, 'Hollie', 'brandontowson@gmail.com', 'Haircut', 'Fade', 'Credit', 'Skin fade');
+INSERT INTO `Appointment` (`Date`, `AppointmentID`, `DesiredEmployee`, `Email`, `AppointmentService`, `AppointmentServiceType`, `PaymentType`, `Comments`) VALUES ('2021-05-03 12:30:00', 3,'Isaac', 'gurmilantowson@gmail.com', 'Haircut', 'Buzzcut', 'Cash', '1 all over');
+INSERT INTO `Appointment` (`Date`, `AppointmentID`, `DesiredEmployee`, `Email`, `AppointmentService`, `AppointmentServiceType`, `PaymentType`, `Comments`) VALUES ('2021-05-04 14:45:00', 4,'Kira', 'rjtowson@gmail.com', 'Nails', 'Hands', 'Credit', 'Gel on top');
+INSERT INTO `Appointment` (`Date`, `AppointmentID`, `DesiredEmployee`, `Email`, `AppointmentService`, `AppointmentServiceType`, `PaymentType`, `Comments`) VALUES ('2021-05-05 16:00:00', 5,'Dulce', 'brandontowson@gmail.com', 'Nails', 'Toes', 'Cash', 'No paint');
+INSERT INTO `Appointment` (`Date`, `AppointmentID`, `DesiredEmployee`, `Email`, `AppointmentService`, `AppointmentServiceType`, `PaymentType`, `Comments`) VALUES ('2021-05-06 17:15:00', 6,'Odell', 'gurmilantowson@gmail.com', 'Nails', 'Hands', 'Credit', 'Hang nail on left big thumb');
+INSERT INTO `Appointment` (`Date`, `AppointmentID`, `DesiredEmployee`, `Email`, `AppointmentService`, `AppointmentServiceType`, `PaymentType`, `Comments`) VALUES ('2021-05-07 18:00:00', 7,'Magdalena', 'rjtowson@gmail.com', 'Wax', 'Upper Lip', 'Cash', 'Sensitive skin');
+INSERT INTO `Appointment` (`Date`, `AppointmentID`, `DesiredEmployee`, `Email`, `AppointmentService`, `AppointmentServiceType`, `PaymentType`, `Comments`) VALUES ('2021-05-08 09:15:00', 8,'Vincent', 'brandontowson@gmail.com', 'Wax', 'Eyebrows', 'Credit', 'Clean up eyebrow on sides');
+INSERT INTO `Appointment` (`Date`, `AppointmentID`, `DesiredEmployee`, `Email`, `AppointmentService`, `AppointmentServiceType`, `PaymentType`, `Comments`) VALUES ('2021-05-09 10:00:00', 9,'Kira', 'gurmilantowson@gmail.com', 'Wax', 'Legs', 'Cash', 'Swimmer');
+INSERT INTO `Appointment` (`Date`, `AppointmentID`, `DesiredEmployee`, `Email`, `AppointmentService`, `AppointmentServiceType`, `PaymentType`, `Comments`) VALUES ('2021-05-10 13:30:00', 10,'Hollie', 'rjtowson@gmail.com', 'Wax', 'Neck', 'Credit', 'Wants bald');
 
 
 #
