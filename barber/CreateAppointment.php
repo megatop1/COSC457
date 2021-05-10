@@ -51,7 +51,7 @@ if (isset($_POST['submit'])) {
     </form>
 
 	<h3>When you are done entering your information, please click the green "Submit" button, then click "Next"</h3>
-	<a href="#">Next</a>
+	<a href="appointment/appointment.php">Next</a>
     <a href="index.php">Back to home</a>
 
     <?php include "templates/footer.php"; ?>
