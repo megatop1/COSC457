@@ -13,16 +13,17 @@ CREATE TABLE `Appointment` (
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
-INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('1974-07-16 10:30:00', 1);
-INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('1992-02-08 11:15:00', 2);
-INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('1988-04-05 12:30:00', 3);
-INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('1999-03-25 14:45:00', 4);
-INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('1997-11-14 16:00:00', 5);
-INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('2002-09-26 17:15:00', 6);
-INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('1983-06-20 18:00:00', 7);
-INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('1997-01-15 09:15:00', 8);
-INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('2006-07-06 10:00:00', 9);
-INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('1972-10-22 13:30:00', 10);
+
+INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('2021-05-01 10:30:00', 1);
+INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('2021-05-02 11:15:00', 2);
+INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('2021-05-03 12:30:00', 3);
+INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('2021-05-04 14:45:00', 4);
+INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('2021-05-05 16:00:00', 5);
+INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('2021-05-06 17:15:00', 6);
+INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('2021-05-07 18:00:00', 7);
+INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('2021-05-08 09:15:00', 8);
+INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('2021-05-09 10:00:00', 9);
+INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('2021-05-10 13:30:00', 10);
 
 
 #
