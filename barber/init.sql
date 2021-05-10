@@ -7,10 +7,10 @@ use barber;
 DROP TABLE IF EXISTS `Appointment`;
 
 CREATE TABLE `Appointment` (
-  `Date` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Date` datetime COLLATE utf8mb4_unicode_ci NOT NULL,
   `AppointmentID` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`AppointmentID`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
 INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('1974-07-16', 1);
