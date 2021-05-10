@@ -25,7 +25,8 @@
             <h1>Welcome!!!</h1>
             <p>Welcome to the barber shop's appointment manage system. Please click "Create Appoinment" to book a new appointment.
             To see scheduled appointments, click "Scheduled Appointments. If you need to update an appoinment's information, change any appointment details, or delete
-            an appointment, please click "Update Appointment"
+            an appointment, please click "Update Appointment". For other inquiries, such as to find what days a certain employee is off, click Employees and choose the
+            "Check which employees are off on a certain day of the week" option and input the day of the week. 
             </p>
         </div>
         </div>

@@ -48,7 +48,7 @@ try {
         <td><?php echo escape($row["AppointmentServiceType"]); ?></td>
         <td><?php echo escape($row["PaymentType"]); ?> </td>
         <td><?php echo escape($row["Comments"]); ?> </td>
-        <td><a href="update-single.php?id=<?php echo escape($row["id"]); ?>">Edit</a></td>
+        <td><a href="update-single.php?id=<?php echo escape($row["AppointmentID"]); ?>">Edit</a></td>
       </tr>
     <?php endforeach; ?>
     </tbody>
