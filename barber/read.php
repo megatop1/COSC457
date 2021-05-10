@@ -14,13 +14,13 @@ if (isset($_POST['submit'])) {
     $connection = new PDO($dsn, $username, $password, $options);
 
     $sql = "SELECT *
-    FROM Client
-    WHERE FirstName = :Client";
+    FROM Appointment
+    WHERE Date LIKE :Date";
 
-    $Client = $_POST['Client'];
+    $Date = $_POST['Date'];
 
     $statement = $connection->prepare($sql);
-    $statement->bindParam(':Client', $Client, PDO::PARAM_STR);
+    $statement->bindParam(':Date', $Date, PDO::PARAM_STR);
     $statement->execute();
 
     $result = $statement->fetchAll();
@@ -40,19 +40,28 @@ if (isset($_POST['submit'])) {
       <thead>
 <tr>
 
-  <th>Phone Number</th>
-  <th>Client ID</th>
-  <th>First Name</th>
-  <th>Last Name</th>
+  <th>Date</th>
+  <th>AppointmentID</th>
+  <th>DesiredEmployee</th>
+  <th>Email</th>
+  <th>AppointmentService</th>
+  <th>AppointmentServiceType</th>
+  <th>PaymentType</th>
+  <th>Comments</th>
+  <th></th>
 </tr>
       </thead>
       <tbody>
   <?php foreach ($result as $row) { ?>
       <tr>
-<td><?php echo escape($row["PhoneNumber"]); ?></td>
-<td><?php echo escape($row["ClientID"]); ?></td>
-<td><?php echo escape($row["FirstName"]); ?></td>
-<td><?php echo escape($row["LastName"]); ?></td>
+<td><?php echo escape($row["Date"]); ?></td>
+<td><?php echo escape($row["AppointmentID"]); ?></td>
+<td><?php echo escape($row["DesiredEmployee"]); ?></td>
+<td><?php echo escape($row["Email"]); ?></td>
+<td><?php echo escape($row["AppointmentService"]); ?></td>
+<td><?php echo escape($row["AppointmentServiceType"]); ?></td>
+<td><?php echo escape($row["PaymentType"]); ?></td>
+<td><?php echo escape($row["Comments"]); ?></td>
       </tr>
     <?php } ?>
       </tbody>
@@ -64,9 +73,11 @@ if (isset($_POST['submit'])) {
 
 <h2>List All Appointments</h2>
 
+<h4>Please enter the the date in the following format: %2021-05-10%. The % are required since we are using the substring function</h4>
+
 <form method="post">
-  <label for="Client">Client</label>
-  <input type="text" id="Client" name="Client">
+  <label for="Date">Date</label>
+  <input type="text" id="Date" name="Date">
   <input type="submit" name="submit" value="View Results">
 </form>
 
