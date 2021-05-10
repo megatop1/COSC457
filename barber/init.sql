@@ -9,21 +9,24 @@ DROP TABLE IF EXISTS `Appointment`;
 CREATE TABLE `Appointment` (
   `Date` datetime COLLATE utf8mb4_unicode_ci NOT NULL,
   `AppointmentID` int(11) NOT NULL AUTO_INCREMENT,
+  `DesiredEmployee` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `Email` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `AppointmentService` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`AppointmentID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 
 
-INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('2021-05-01 10:30:00', 1);
-INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('2021-05-02 11:15:00', 2);
-INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('2021-05-03 12:30:00', 3);
-INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('2021-05-04 14:45:00', 4);
-INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('2021-05-05 16:00:00', 5);
-INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('2021-05-06 17:15:00', 6);
-INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('2021-05-07 18:00:00', 7);
-INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('2021-05-08 09:15:00', 8);
-INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('2021-05-09 10:00:00', 9);
-INSERT INTO `Appointment` (`Date`, `AppointmentID`) VALUES ('2021-05-10 13:30:00', 10);
+INSERT INTO `Appointment` (`Date`, `AppointmentID`, `DesiredEmployee`, `Email`, `AppointmentService`) VALUES ('2021-05-01 10:30:00', 1);
+INSERT INTO `Appointment` (`Date`, `AppointmentID`, `DesiredEmployee`, `Email`, `AppointmentService`) VALUES ('2021-05-02 11:15:00', 2);
+INSERT INTO `Appointment` (`Date`, `AppointmentID`, `DesiredEmployee`, `Email`, `AppointmentService`) VALUES ('2021-05-03 12:30:00', 3);
+INSERT INTO `Appointment` (`Date`, `AppointmentID`, `DesiredEmployee`, `Email`, `AppointmentService`) VALUES ('2021-05-04 14:45:00', 4);
+INSERT INTO `Appointment` (`Date`, `AppointmentID`, `DesiredEmployee`, `Email`, `AppointmentService`) VALUES ('2021-05-05 16:00:00', 5);
+INSERT INTO `Appointment` (`Date`, `AppointmentID`, `DesiredEmployee`, `Email`, `AppointmentService`) VALUES ('2021-05-06 17:15:00', 6);
+INSERT INTO `Appointment` (`Date`, `AppointmentID`, `DesiredEmployee`, `Email`, `AppointmentService`) VALUES ('2021-05-07 18:00:00', 7);
+INSERT INTO `Appointment` (`Date`, `AppointmentID`, `DesiredEmployee`, `Email`, `AppointmentService`) VALUES ('2021-05-08 09:15:00', 8);
+INSERT INTO `Appointment` (`Date`, `AppointmentID`, `DesiredEmployee`, `Email`, `AppointmentService`) VALUES ('2021-05-09 10:00:00', 9);
+INSERT INTO `Appointment` (`Date`, `AppointmentID`, `DesiredEmployee`, `Email`, `AppointmentService`) VALUES ('2021-05-10 13:30:00', 10);
 
 
 #

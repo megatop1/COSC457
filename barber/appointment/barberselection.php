@@ -74,8 +74,6 @@ if (isset($_POST['submit'])) {
 <form method="post">
   <label for="dayoff">Enter the day of your appointment. Ex: "Friday"</label>
   <input type="text" id="dayoff" name="dayoff">
-  <label for="dayoff">Enter the service name you will be recieving. Ex: Wax</label>
-  <input type="text" id="dayoff" name="dayoff">
 
   <h2>If you need the full list of services offered, please click below</h2>
   <a href="../service/servicelist.php">List of Offered Services</a>

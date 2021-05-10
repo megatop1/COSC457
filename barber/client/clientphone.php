@@ -71,7 +71,7 @@ if (isset($_POST['submit'])) {
 <h2>Find A Client By Entering Their Phone Number</h2>
 
 <form method="post">
-  <label for="phone">First Name</label>
+  <label for="phone">Phone Number</label>
   <input type="text" id="phone" name="phone">
   <input type="submit" name="submit" value="View Results">
 </form>
