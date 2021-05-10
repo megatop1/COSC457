@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
 
     $sql = "SELECT *
     FROM Client, Appointment
-    WHERE Client.ClientID = AppointmentID AND FirstName = :Fname";
+    WHERE FirstName = :Fname AND LastName = :LastName";
  
 
     $Fname = $_POST['Fname'];
@@ -29,6 +29,7 @@ if (isset($_POST['submit'])) {
     $statement = $connection->prepare($sql);
     /* $statement->bindParam(':Fname', $Fname, PDO::PARAM_STR); */
     $statement->bindParam('Fname', $Fname, PDO::PARAM_STR);
+    $statement->bindParam('Lname', $Lname, PDO::PARAM_STR);
     $statement->execute();
 
     $result = $statement->fetchAll();
