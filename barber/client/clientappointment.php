@@ -79,6 +79,8 @@ if (isset($_POST['submit'])) {
 <form method="post">
   <label for="Fname">First Name</label>
   <input type="text" id="Fname" name="Fname">
+  <label for="Lname">Last Name</label>
+  <input type="text" id="Lname" name="Lname">
   <input type="submit" name="submit" value="View Results">
 </form>
 
