@@ -38,7 +38,6 @@ CREATE TABLE `Client` (
   `LastName` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`ClientID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
 INSERT INTO `Client` (`PhoneNumber`, `ClientID`, `FirstName`, `LastName`) VALUES ('460.067.0219', 1, 'Kaelyn', 'Hartmann');
 INSERT INTO `Client` (`PhoneNumber`, `ClientID`, `FirstName`, `LastName`) VALUES ('001.815.8054', 2, 'Tavares', 'Collier');
 INSERT INTO `Client` (`PhoneNumber`, `ClientID`, `FirstName`, `LastName`) VALUES ('(655)250-9279', 3, 'Cornelius', 'McGlynn');
