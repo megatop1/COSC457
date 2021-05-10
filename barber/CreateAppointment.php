@@ -5,9 +5,10 @@ if (isset($_POST['submit'])) {
 	try {
 	  $connection = new PDO($dsn, $username, $password, $options);
   
-	  $date = array(
+	  $appointment = array(
 		"Date" => $_POST['Date'],
 		"DesiredEmployee" => $_POST['DesiredEmployee'],
+		"Email" => $_POST['Email'],
 		"Service" => $_POST['Service'],
 		"ServiceType" => $_POST['ServiceType'],
 		"PaymentType" => $_POST['PaymentType'],
@@ -15,8 +16,8 @@ if (isset($_POST['submit'])) {
 	  );
   
 	  $sql = "INSERT INTO
-	  Appointment (Date, DesiredEmployee, Service, ServiceType, PaymentType, PaymentType, Comment)
-	  Values (:Date, :DesiredEmployee, :Service, :ServiceType, :PaymentType, :Comment)";
+	  Appointment (Date, DesiredEmployee, Email, AppointmentService, AppointmentServiceType, PaymentType, Comments)
+	  Values (:Date, :DesiredEmployee, :Email, :AppointmentService, :AppointmentServiceType, :PaymentType, :Comments)";
   
 	  $statement = $connection->prepare($sql);
 	  $statement->execute($appointment);
@@ -42,9 +43,11 @@ if (isset($_POST['submit'])) {
     	<input type="text" name="Date" id="Date"><br> <!-- An input/label (entity) <firstname> is associated to a label by its id (attribute)-->
 		<label for="DesiredEmployee">Desired Employee</label><br>
 		<input type="text" name="DesiredEmployee" id="DesiredEmployee"><br>
-		<label for="Service">Service</label><br>
-		<input type="text" name="Service" id="Service"><br>
-		<label for="ServiceType">Service Type</label><br>
+		<label for="Email">Email</label><br>
+		<input type="text" name="Email" id="Email"><br>
+		<label for="AppointmentService">Appointment Service</label><br>
+		<input type="text" name="AppointmentService" id="AppointmentService"><br>
+		<label for="AppointmentServiceType">Appointment Service Type</label><br>
 		<input type="text" name="ServiceType" id="ServiceType"><br>
 		<label for="PaymentType">Payment Type</label><br>
 		<input type="text" name="PaymentType" id="PaymentType"><br>
