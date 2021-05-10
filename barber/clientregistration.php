@@ -1,7 +1,6 @@
 <?php
 if (isset($_POST['submit'])) {
 	require "config.php";
-    require "common.php";
   
 	try {
 	  $connection = new PDO($dsn, $username, $password, $options);
@@ -10,7 +9,7 @@ if (isset($_POST['submit'])) {
 		"PhoneNumber" => $_POST['PhoneNumber'],
 		"ClientID" => $_POST['ClientID'],
 		"FirstName" => $_POST['FirstName'],
-		"LastName" => $_POST['LastName']
+		"LastName" => $_POST['LastName'],
 	  );
   
 	  $sql = sprintf(
@@ -42,18 +41,16 @@ if (isset($_POST['submit'])) {
     <form method="post">
     	<label for="PhoneNumber">Phone Number</label><br> <!-- label for "input" aka Each label has attribute name and id -->
     	<input type="text" name="PhoneNumber" id="PhoneNumber"><br> <!-- An input/label (entity) <firstname> is associated to a label by its id (attribute)-->
-		<label for="ClientID">ClientID</label><br>
-		<input type="text" name="ClientID" id="ClientID"><br>
 		<label for="FirstName">First Name</label><br>
 		<input type="text" name="FirstName" id="FirstName"><br>
 		<label for="LastName">Last Name</label><br>
 		<input type="text" name="LastName" id="LastName"><br>
-        <input type="submit" name="submit" value="Submit">
+		<input type="submit" name="submit" value="Submit">
     </form>
 	<h3>When you are done entering your information, please click the green "Submit" button, then click "Next"</h3>
 	
 	<!-- Change Later -->
-	<a href="appointment/clientregistration.php">Next</a>
+	<a href="appointment/appointmentdetails.php">Next</a>
 	
 	<a href="index.php">Back to home</a>
 

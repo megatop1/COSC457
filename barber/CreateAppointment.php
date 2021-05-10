@@ -61,7 +61,7 @@ if (isset($_POST['submit'])) {
 	<h3>When you are done entering your information, please click the green "Submit" button, then click "Next"</h3>
 	
 	<!-- Change Later -->
-	<a href="appointment/clientregistration.php">Next</a>
+	<a href="clientregistration.php">Next</a>
 	
 	<a href="index.php">Back to home</a>
 
