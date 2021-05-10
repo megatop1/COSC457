@@ -67,15 +67,15 @@ CREATE TABLE `Employee` (
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `Employee` (`Position`, `DaysOff`, `EmployeeID`, `FirstName`, `LastName`) VALUES ('Manager', 'Wednesday', 1, 'Hilda', 'Aufderhar');
-INSERT INTO `Employee` (`Position`, `DaysOff`, `EmployeeID`, `FirstName`, `LastName`) VALUES ('Barber', 'Friday', 2, 'Hollie', 'Reilly');
-INSERT INTO `Employee` (`Position`, `DaysOff`, `EmployeeID`, `FirstName`, `LastName`) VALUES ('janitor', 'Sunday', 3, 'Angelo', 'Nicolas');
+INSERT INTO `Employee` (`Position`, `DaysOff`, `EmployeeID`, `FirstName`, `LastName`) VALUES ('Esthetician', 'Friday', 2, 'Hollie', 'Reilly');
+INSERT INTO `Employee` (`Position`, `DaysOff`, `EmployeeID`, `FirstName`, `LastName`) VALUES ('Janitor', 'Sunday', 3, 'Angelo', 'Nicolas');
 INSERT INTO `Employee` (`Position`, `DaysOff`, `EmployeeID`, `FirstName`, `LastName`) VALUES ('Manicurist', 'Thursday', 4, 'Isaac', 'Windler');
 INSERT INTO `Employee` (`Position`, `DaysOff`, `EmployeeID`, `FirstName`, `LastName`) VALUES ('Barber', 'Monday', 5, 'Vincent', 'Harris');
-INSERT INTO `Employee` (`Position`, `DaysOff`, `EmployeeID`, `FirstName`, `LastName`) VALUES ('Barber', 'Tuesday', 6, 'Garett', 'Welch');
+INSERT INTO `Employee` (`Position`, `DaysOff`, `EmployeeID`, `FirstName`, `LastName`) VALUES ('Janitor', 'Tuesday', 6, 'Garett', 'Welch');
 INSERT INTO `Employee` (`Position`, `DaysOff`, `EmployeeID`, `FirstName`, `LastName`) VALUES ('Manicurist', 'Thursday', 7, 'Magdalena', 'Towne');
 INSERT INTO `Employee` (`Position`, `DaysOff`, `EmployeeID`, `FirstName`, `LastName`) VALUES ('Manager', 'Sunday', 8, 'Odell', 'Corkery');
 INSERT INTO `Employee` (`Position`, `DaysOff`, `EmployeeID`, `FirstName`, `LastName`) VALUES ('Barber', 'Wednesday', 9, 'Dulce', 'Dach');
-INSERT INTO `Employee` (`Position`, `DaysOff`, `EmployeeID`, `FirstName`, `LastName`) VALUES ('janitor', 'Tuesday', 10, 'Kira', 'Pagac');
+INSERT INTO `Employee` (`Position`, `DaysOff`, `EmployeeID`, `FirstName`, `LastName`) VALUES ('Esthetician', 'Tuesday', 10, 'Kira', 'Pagac');
 
 
 #
@@ -152,16 +152,16 @@ CREATE TABLE `Service` (
   PRIMARY KEY (`ServiceID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('wax', 1, 'eyebrows', 341031220);
-INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('wax', 2, 'eyebrows', 711);
-INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('wax', 3, 'eyebrows', 21581550);
-INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('wax', 4, 'eyebrows', 15);
-INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('wax', 5, 'eyebrows', 33);
-INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('wax', 6, 'eyebrows', 14);
-INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('wax', 7, 'eyebrows', 52);
-INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('wax', 8, 'eyebrows', 14650);
-INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('wax', 9, 'eyebrows', 0);
-INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('wax', 10, 'eyebrows', 69);
+INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('Haircut', 1, 'Nails', 60);
+INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('Wax', 2, 'Eyebrows', 40);
+INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('Haircut', 3, 'Eyebrows', 50);
+INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('Haircut', 4, 'Nails', 45);
+INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('Wax', 5, 'Nails', 65);
+INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('Wax', 6, 'Eyebrows', 55);
+INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('Nails', 7, 'Eyebrows', 85);
+INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('Wax', 8, 'Eyebrows', 75);
+INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('Haircut', 9, 'Nails', 100);
+INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('Wax', 10, 'Haircut', 50);
 
 
 #
