@@ -69,11 +69,16 @@ if (isset($_POST['submit'])) {
   <?php }
 } ?>
 
-<h2>Get list of barbers available for your appointment</h2>
+<h2>Get list of employees available for your appointment who can perform your service</h2>
 
 <form method="post">
   <label for="dayoff">Enter the day of your appointment. Ex: "Friday"</label>
   <input type="text" id="dayoff" name="dayoff">
+  <label for="dayoff">Enter the service name you will be recieving. Ex: Wax</label>
+  <input type="text" id="dayoff" name="dayoff">
+
+  <h2>If you need</h2>
+
   <input type="submit" name="submit" value="View Results">
 </form>
 

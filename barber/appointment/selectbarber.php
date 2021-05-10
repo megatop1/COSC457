@@ -69,7 +69,7 @@ if (isset($_POST['submit'])) {
   <?php }
 } ?>
 
-<h2>Enter the name of your desired barber based on the results from the previous page</h2>
+<h2>Enter the name of your desired employee based on the results from the previous page</h2>
 
 <form method="post">
   <label for="dayoff">Name of desired barber: Ex. Bob</label>

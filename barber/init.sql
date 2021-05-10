@@ -66,15 +66,15 @@ CREATE TABLE `Employee` (
   PRIMARY KEY (`EmployeeID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-INSERT INTO `Employee` (`Position`, `DaysOff`, `EmployeeID`, `FirstName`, `LastName`) VALUES ('janitor', 'Wednesday', 1, 'Hilda', 'Aufderhar');
-INSERT INTO `Employee` (`Position`, `DaysOff`, `EmployeeID`, `FirstName`, `LastName`) VALUES ('janitor', 'Friday', 2, 'Hollie', 'Reilly');
+INSERT INTO `Employee` (`Position`, `DaysOff`, `EmployeeID`, `FirstName`, `LastName`) VALUES ('Manager', 'Wednesday', 1, 'Hilda', 'Aufderhar');
+INSERT INTO `Employee` (`Position`, `DaysOff`, `EmployeeID`, `FirstName`, `LastName`) VALUES ('Barber', 'Friday', 2, 'Hollie', 'Reilly');
 INSERT INTO `Employee` (`Position`, `DaysOff`, `EmployeeID`, `FirstName`, `LastName`) VALUES ('janitor', 'Sunday', 3, 'Angelo', 'Nicolas');
-INSERT INTO `Employee` (`Position`, `DaysOff`, `EmployeeID`, `FirstName`, `LastName`) VALUES ('janitor', 'Thursday', 4, 'Isaac', 'Windler');
-INSERT INTO `Employee` (`Position`, `DaysOff`, `EmployeeID`, `FirstName`, `LastName`) VALUES ('janitor', 'Monday', 5, 'Vincent', 'Harris');
-INSERT INTO `Employee` (`Position`, `DaysOff`, `EmployeeID`, `FirstName`, `LastName`) VALUES ('janitor', 'Tuesday', 6, 'Garett', 'Welch');
-INSERT INTO `Employee` (`Position`, `DaysOff`, `EmployeeID`, `FirstName`, `LastName`) VALUES ('janitor', 'Thursday', 7, 'Magdalena', 'Towne');
-INSERT INTO `Employee` (`Position`, `DaysOff`, `EmployeeID`, `FirstName`, `LastName`) VALUES ('janitor', 'Sunday', 8, 'Odell', 'Corkery');
-INSERT INTO `Employee` (`Position`, `DaysOff`, `EmployeeID`, `FirstName`, `LastName`) VALUES ('janitor', 'Wednesday', 9, 'Dulce', 'Dach');
+INSERT INTO `Employee` (`Position`, `DaysOff`, `EmployeeID`, `FirstName`, `LastName`) VALUES ('Nail Technition', 'Thursday', 4, 'Isaac', 'Windler');
+INSERT INTO `Employee` (`Position`, `DaysOff`, `EmployeeID`, `FirstName`, `LastName`) VALUES ('Barber', 'Monday', 5, 'Vincent', 'Harris');
+INSERT INTO `Employee` (`Position`, `DaysOff`, `EmployeeID`, `FirstName`, `LastName`) VALUES ('Barber', 'Tuesday', 6, 'Garett', 'Welch');
+INSERT INTO `Employee` (`Position`, `DaysOff`, `EmployeeID`, `FirstName`, `LastName`) VALUES ('Nail Technition', 'Thursday', 7, 'Magdalena', 'Towne');
+INSERT INTO `Employee` (`Position`, `DaysOff`, `EmployeeID`, `FirstName`, `LastName`) VALUES ('Manager', 'Sunday', 8, 'Odell', 'Corkery');
+INSERT INTO `Employee` (`Position`, `DaysOff`, `EmployeeID`, `FirstName`, `LastName`) VALUES ('Barber', 'Wednesday', 9, 'Dulce', 'Dach');
 INSERT INTO `Employee` (`Position`, `DaysOff`, `EmployeeID`, `FirstName`, `LastName`) VALUES ('janitor', 'Tuesday', 10, 'Kira', 'Pagac');
 
 
