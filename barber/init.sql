@@ -152,16 +152,16 @@ CREATE TABLE `Service` (
   PRIMARY KEY (`ServiceID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('Haircut', 1, 'Nails', 60);
+INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('Haircut', 1, 'Mullet', 60);
 INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('Wax', 2, 'Eyebrows', 40);
-INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('Haircut', 3, 'Eyebrows', 50);
-INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('Haircut', 4, 'Nails', 45);
-INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('Wax', 5, 'Nails', 65);
-INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('Wax', 6, 'Eyebrows', 55);
-INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('Nails', 7, 'Eyebrows', 85);
-INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('Wax', 8, 'Eyebrows', 75);
-INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('Haircut', 9, 'Nails', 100);
-INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('Wax', 10, 'Haircut', 50);
+INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('Haircut', 3, 'Fade', 50);
+INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('Haircut', 4, 'Buzzcut', 45);
+INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('Wax', 5, 'Upper Lip', 65);
+INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('Wax', 6, 'Legs', 55);
+INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('Nails', 7, 'Toes', 85);
+INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('Nails', 8, 'Hands', 75);
+INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('Haircut', 9, 'Trim', 100);
+INSERT INTO `Service` (`ServiceName`, `ServiceID`, `ServiceType`, `Cost`) VALUES ('Wax', 10, 'Neck', 50);
 
 
 #
