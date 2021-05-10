@@ -20,11 +20,11 @@ if (isset($_POST['submit'])) {
 
     $sql = "SELECT *
     FROM Client
-    WHERE FirstName = :Fname AND LastName = :LastName";
+    WHERE FirstName = :Fname AND LastName = :Lname";
  
 
     $Fname = $_POST['Fname'];
-    $Lname = $_POST['Lname']; 
+    $Lname = $_POST['Lname'];
 
     $statement = $connection->prepare($sql);
     /* $statement->bindParam(':Fname', $Fname, PDO::PARAM_STR); */
@@ -52,8 +52,6 @@ if (isset($_POST['submit'])) {
   <th>ClientID</th>
   <th>FirstName</th>
   <th>LastName</th>
-  <th>Date</th>
-  <th>AppointmentID</th>
 </tr>
       </thead>
       <tbody>
@@ -63,8 +61,6 @@ if (isset($_POST['submit'])) {
 <td><?php echo escape($row["ClientID"]); ?></td>
 <td><?php echo escape($row["FirstName"]); ?></td>
 <td><?php echo escape($row["LastName"]); ?></td>
-<td><?php echo escape($row["Date"]); ?></td>
-<td><?php echo escape($row["AppointmentID"]); ?></td>
       </tr>
     <?php } ?>
       </tbody>
@@ -74,13 +70,13 @@ if (isset($_POST['submit'])) {
   <?php }
 } ?>
 
-<h2>Find client by entering their First and Last Name</h2>
+<h2>Find Client Data by entering their first name and last name and the staff member</h2>
 
 <form method="post">
   <label for="Fname">First Name</label>
   <input type="text" id="Fname" name="Fname">
   <label for="Lname">Last Name</label>
-  <input type="text" id="Lname" name="Lname">
+  <input type="text" id="Lname" name="Lname"> 
   <input type="submit" name="submit" value="View Results">
 </form>
 

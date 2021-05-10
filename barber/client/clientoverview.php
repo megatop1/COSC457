@@ -15,6 +15,6 @@
 <ul>
     <li><a href="clientname.php">Find Client by name</a></li>
     <li><a href="clientphone.php">Find Client by phone number</a></li>
-    <li><a href="clientappointment.php">Find Client's Appointment</a></li>
+    <!--<li><a href="clientappointment.php">Find Client's Appointment</a></li>-->
 </ul>
 <?php include "templates/footer.php"; ?>

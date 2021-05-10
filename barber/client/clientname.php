@@ -70,7 +70,7 @@ if (isset($_POST['submit'])) {
   <?php }
 } ?>
 
-<h2>Find Employee Data by entering their first name and last name</h2>
+<h2>Find Client Data by entering their first name and last name</h2>
 
 <form method="post">
   <label for="Fname">First Name</label>
