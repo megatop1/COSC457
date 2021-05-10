@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
 
 
     $sql = "SELECT *
-    FROM Client, Appointment
+    FROM Client
     WHERE FirstName = :Fname AND LastName = :LastName";
  
 
