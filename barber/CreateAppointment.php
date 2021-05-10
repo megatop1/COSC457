@@ -9,15 +9,18 @@ if (isset($_POST['submit'])) {
 		"Date" => $_POST['Date'],
 		"DesiredEmployee" => $_POST['DesiredEmployee'],
 		"Email" => $_POST['Email'],
-		"Service" => $_POST['Service'],
-		"ServiceType" => $_POST['ServiceType'],
+		"AppointmentService" => $_POST['AppointmentService'],
+		"AppointmentServiceType" => $_POST['ServiceType'],
 		"PaymentType" => $_POST['PaymentType'],
-		"Comment" => $_POST['Comment'],
+		"Comments" => $_POST['Comment'],
 	  );
   
-	  $sql = "INSERT INTO
-	  Appointment (Date, DesiredEmployee, Email, AppointmentService, AppointmentServiceType, PaymentType, Comments)
-	  Values (:Date, :DesiredEmployee, :Email, :AppointmentService, :AppointmentServiceType, :PaymentType, :Comments)";
+	  $sql = sprintf(
+		"INSERT INTO %s (%s) values (%s)",
+		"Appointment",
+		implode(", ", array_keys($appointment)),
+		":" . implode(", :", array_keys($appointment))
+	);
   
 	  $statement = $connection->prepare($sql);
 	  $statement->execute($appointment);
