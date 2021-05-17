@@ -6,6 +6,7 @@
   <a class="active" href="../CreateAppointment.php">Create Appointment</a>
   <a href="../read.php">Scheduled Appointments</a>
   <a href="../update.php">Update Appointment</a>
+  <a href="../delete.php">Delete Appointment</a>
   <a href="../service/servicesoverview.php">Services</a>
   <a href="../employee/employeeoverview.php">Employees</a>
   <a href="../client/clientoverview.php">Clients</a>
