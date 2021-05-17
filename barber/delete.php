@@ -11,12 +11,12 @@ if (isset($_GET["AppointmentID"])) {
   try {
     $connection = new PDO($dsn, $username, $password, $options);
 
-    $id = $_GET["AppointmentID"];
+    $AppointmentID = $_GET["AppointmentID"];
 
     $sql = "DELETE FROM Appointment WHERE AppointmentID = :AppointmentID";
 
     $statement = $connection->prepare($sql);
-    $statement->bindValue(':AppointmentID', $id);
+    $statement->bindValue(':AppointmentID', $AppointmentID);
     $statement->execute();
 
     $success = "Appointment successfully deleted";
@@ -28,7 +28,7 @@ if (isset($_GET["AppointmentID"])) {
 try {
   $connection = new PDO($dsn, $username, $password, $options);
 
-  $sql = "DELETE FROM Appointment WHERE AppointmentID = :id";
+  $sql = "SELECT * FROM Appointment";
 
   $statement = $connection->prepare($sql);
   $statement->execute();
@@ -55,6 +55,7 @@ try {
       <th>AppointmentServiceType</th>
       <th>PaymentType</th>
       <th>Comments</th>
+      <th>Delete</th>
     </tr>
   </thead>
     <tbody>
