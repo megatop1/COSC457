@@ -69,7 +69,7 @@ try {
         <td><?php echo escape($row["AppointmentServiceType"]); ?></td>
         <td><?php echo escape($row["PaymentType"]); ?> </td>
         <td><?php echo escape($row["Comments"]); ?> </td>
-        <td><a href="delete.php?id=<?php echo escape($row["AppointmentID"]); ?>">Delete</a></td>
+        <td><a href="delete.php?AppointmentID=<?php echo escape($row["AppointmentID"]); ?>">Delete</a></td>
       </tr>
     <?php endforeach; ?>
     </tbody>
